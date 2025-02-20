@@ -1,0 +1,288 @@
+/* Reset some default styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Hide scrollbars */
+}
+
+body {
+  font-family: monospace;
+  background-image: url(https://wallpapers.com/images/hd/windows-98-yaa4sbkls0sleaqm.jpg);
+  background-position: 100%;
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  /* Black background */
+  color: #fff;
+  /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  /* Ensure it's on top */
+  opacity: 1;
+  /* Fully visible initially */
+  transition: opacity 1s ease-in-out;
+  /* Smooth transition */
+}
+
+.loading-content {
+  text-align: center;
+}
+
+#power-on {
+  background-color: #c0c0c0;
+  color: black;
+  border: 2px outset white;
+  /* Gives the pressed look */
+  padding: 5px 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 1px 1px 0 #00000026;
+}
+
+#power-on:active {
+  border: 2px inset white;
+}
+
+/* Desktop styles */
+.desktop {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  /* Initially invisible */
+  transition: opacity 1s ease-in-out;
+  /* Smooth transition */
+}
+
+/* Taskbar styles */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #c0c0c0;
+  /* Windows 98 grey */
+  border-top: 2px solid white;
+  /* Highlight */
+  border-left: 2px solid white;
+  border-right: 2px solid #808080;
+  /* Shadow */
+  border-bottom: 2px solid #808080;
+  height: 30px;
+  /* Approximate height */
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.start-button {
+  background-color: #c0c0c0;
+  color: black;
+  border: 2px outset white;
+  /* Gives the pressed look */
+  padding: 2px 10px;
+  margin-left: 2px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 1px 1px 0 #00000026;
+}
+
+.start-button:active {
+  border: 2px inset white;
+}
+
+.taskbar-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/* Desktop icons styles */
+.desktop-icons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  cursor: pointer;
+}
+
+.desktop-icon img {
+  width: 50px;
+  /* Icon size */
+  height: 50px;
+  margin-bottom: 5px;
+  /* Spacing between icon and text */
+}
+
+/* Window styles */
+.window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  /* Default size */
+  height: 300px;
+  background-color: #c0c0c0;
+  border: 2px solid white;
+  /* Highlight */
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  border-right: 2px solid #808080;
+  /* Shadow */
+  border-bottom: 2px solid #808080;
+  box-sizing: border-box;
+  display: none;
+  /* Hidden by default */
+}
+
+.window-header {
+  background-color: #000080;
+  /* Dark blue title bar */
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.close-button {
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.window-content {
+  padding: 10px;
+  overflow: auto;
+  /* Scroll if content is too long */
+}
+
+/* Form elements */
+input[type="text"],
+select,
+button {
+  font-family: monospace;
+  /* Consistent font */
+  border: 1px solid #808080;
+  /* Shadow */
+  background-color: #fff;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #c0c0c0;
+  color: black;
+  border: 2px outset white;
+  cursor: pointer;
+  padding: 3px 10px;
+  box-shadow: 1px 1px 0 #00000026;
+}
+
+button:active {
+  border: 2px inset white;
+}
+
+/* Scrollbar styles for window content */
+.window-content::-webkit-scrollbar {
+  width: 10px;
+  background-color: #c0c0c0;
+  /* Match window background */
+}
+
+.window-content::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  /* Scrollbar color */
+  border: 2px solid #c0c0c0;
+  /* Give it a recessed look */
+}
+
+/* Task item styles */
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  /* Space between tasks */
+}
+
+.task-item span {
+  flex-grow: 1;
+  /* Take up remaining space */
+  margin-left: 5px;
+  /* Space between checkbox and text */
+}
+
+.task-item button {
+  margin-left: 5px;
+  /* Space between buttons */
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #c0c0c0;
+  border: 2px solid white;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  display: none;
+}
+
+/* Pin styles */
+.pin-info {
+  position: absolute;
+  bottom: 140px;
+  /* Adjust as needed */
+  right: 20px;
+  background-color: #c0c0c0;
+  border: 2px solid white;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  display: none;
+}
+
+.pin-info::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  /* Adjust as needed */
+  right: 10px;
+  /* Corrected to right */
+  border-width: 10px 10px 0 0;
+  border-style: solid;
+  border-color: #c0c0c0 transparent transparent transparent;
+}

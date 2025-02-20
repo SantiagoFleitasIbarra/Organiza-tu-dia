@@ -1,0 +1,169 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Organiza tu Día con Alegría!</title>
+  <link rel="shortcut icon" href="images/favicon.png"image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <h1>¡Organiza tu Día con Alegría!</h1>
+      <button id="power-on">Encender Compu</button>
+    </div>
+  </div>
+
+  <div class="desktop" id="desktop">
+    <!-- Taskbar -->
+    <div class="taskbar">
+      <div class="start-button">Start</div>
+      <div class="taskbar-icons">
+        <!-- Icons can be added here -->
+      </div>
+      <button id="power-off" style="margin-left: auto; margin-right: 5px;">Apagar</button>
+    </div>
+
+    <!-- Desktop Icons -->
+    <div class="desktop-icons">
+      <div class="desktop-icon" data-section="home">
+        <img src="images/home.png" alt="Inicio">
+        <span>Inicio</span>
+      </div>
+      <div class="desktop-icon" data-section="tasks">
+        <img src="images/tasks.png" alt="Tareas">
+        <span>Tareas</span>
+      </div>
+      <div class="desktop-icon" data-section="terms">
+        <img src="images/tyc.png" alt="Términos y Condiciones">
+        <span>Términos y</span>
+        <span>Condiciones</span>
+      </div>
+      <div class="desktop-icon" data-section="about">
+        <img src="images/acerca-de.png" alt="Acerca de">
+        <span>Acerca de</span>
+      </div>
+      <div class="desktop-icon" data-section="fun-fact">
+        <img src="images/dato-curioso.png" alt="Dato Curioso">
+        <span>Dato Curioso</span>
+      </div>
+    </div>
+
+    <!-- Task Folder Icon -->
+    <div id="task-folder"
+      style="position: absolute; bottom: 170px; right: 20px; cursor: pointer; width: 50px; height: 50px;">
+      <img src="images/carpeta.png" alt="Task Folder" width="50" height="50">
+      <span
+        style="color: white; text-shadow: 1px 1px 2px black; display: block; text-align: center;">Tareas</span>
+    </div>
+
+    <!-- Pin Character -->
+    <div id="pin"
+      style="position: absolute; bottom: 120px; right: 100px; cursor: pointer; width: 50px; height: 50px;">
+      <img src="images/pin.png" alt="Pin" width="170" height="170">
+    </div>
+
+    <!-- Pin Info (Initially Hidden) -->
+    <div class="pin-info">
+      Creado por: Santiago Fleitas
+    </div>
+
+    <!-- Notification -->
+    <div class="notification">
+      <!-- Notification message will be displayed here -->
+    </div>
+
+    <!-- Sections (Windows) -->
+    <div id="home" class="window">
+      <!-- Initially visible -->
+      <div class="window-header">
+        Inicio
+        <span class="close-button">x</span>
+      </div>
+      <div class="window-content">
+        <h2>Bienvenido al Gestor de Tareas Divertido</h2>
+        <p>Este es tu espacio para organizar tus tareas diarias de una manera fácil y entretenida. Con nuestro gestor,
+          podrás añadir, completar, editar y eliminar tareas, además de clasificarlas por categorías para mantener todo
+          bajo control. ¡Comienza a organizar tu día con una sonrisa!</p>
+        <img src="images/icon.png" alt="Tasks" width="20px" />
+      </div>
+    </div>
+
+    <div id="tasks" class="window" style="display: none;">
+      <div class="window-header">
+        Tareas
+        <span class="close-button">x</span>
+      </div>
+      <div class="window-content">
+        <h2>Añadir Tarea</h2>
+        <p>Aquí puedes añadir nuevas tareas a tu lista. ¡Escribe la tarea y haz clic en "Añadir"!</p>
+        <section id="task-input">
+          <input type="text" id="new-task" placeholder="Añadir nueva tarea...">
+          <button id="add-task-button">Añadir</button>
+        </section>
+      </div>
+    </div>
+
+    <div id="terms" class="window" style="display: none;">
+      <div class="window-header">
+        Términos y Condiciones
+        <span class="close-button">x</span>
+      </div>
+      <div class="window-content">
+        <h2>Términos y Condiciones</h2>
+        <p>Al usar este gestor de tareas, aceptas que tus tareas son tu responsabilidad. No nos hacemos responsables
+          por tareas olvidadas o mal gestionadas. Este gestor es solo una herramienta para ayudarte a organizarte,
+          ¡úselo con sabiduría y alegría!</p>
+      </div>
+    </div>
+
+    <div id="about" class="window" style="display: none;">
+      <div class="window-header">
+        Acerca de
+        <span class="close-button">x</span>
+      </div>
+      <div class="window-content">
+        <h2>Acerca del Creador</h2>
+        <img src="images/santiago.jpg" alt="Santiago Fleitas" width="100px" />
+        <p id="creator-info">Soy una persona organizada y meticulosa, me gusta planificar mis tareas y optimizar mi tiempo para ser más eficiente. Disfruto enfrentar desafíos, aprender cosas nuevas y mejorar constantemente mis habilidades. Siempre busco el equilibrio entre creatividad y estructura para alcanzar mis objetivos de la mejor manera posible. 🚀</p>
+      </div>
+    </div>
+
+    <div id="fun-fact" class="window" style="display: none;">
+      <div class="window-header">
+        Dato Curioso
+        <span class="close-button">x</span>
+      </div>
+      <div class="window-content">
+        <h2>¿Sabías Que...?</h2>
+        <p id="fun-fact-text">La "Regla de los 2 minutos" aumenta la productividad 🕒
+          Si una tarea toma menos de 2 minutos en completarse, es mejor hacerla de inmediato en lugar de agregarla a una lista. Este método, popularizado por Getting Things Done de David Allen, evita la acumulación de pequeñas tareas pendientes.</p>
+          
+        <p id="fun-fact-text">El cerebro ama los "checklists" ✅
+          Marcar tareas como completadas libera dopamina, el neurotransmisor asociado con la satisfacción y la motivación. Es por eso que muchas personas disfrutan tachar cosas en una lista, incluso si agregan tareas después de haberlas hecho solo para marcarlas.</p>
+      </div>
+    </div>
+
+    <div id="tasks-folder" class="window" style="display: none;">
+      <div class="window-header">
+        Carpeta de Tareas
+        <span class="close-button">x</span>
+      </div>
+      <div class="window-content">
+        <h2>Tus Tareas</h2>
+        <section id="task-list-container">
+          <div id="task-list">
+            <!-- Aquí se mostrarán las tareas -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
